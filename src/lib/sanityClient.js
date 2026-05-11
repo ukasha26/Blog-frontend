@@ -3,10 +3,11 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 export const client = createClient({
-  projectId: "g6ay8psk", // Aapki Project ID
-  dataset: "production",
+  // Ab hum direct ID likhne ki bajaye variable use karenge
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID || "g6ay8psk", 
+  dataset: import.meta.env.VITE_SANITY_DATASET || "production",
   useCdn: true,
-  apiVersion: "2024-03-11", // Latest stable version
+  apiVersion: "2023-05-03",
 });
 
 // Images handle karne ke liye builder
